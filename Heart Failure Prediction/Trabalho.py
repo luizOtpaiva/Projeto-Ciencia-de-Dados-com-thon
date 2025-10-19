@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 def main():
     
     # Lendo o dataset
-    df = pd.read_csv('../heart_failure_clinical_records_dataset.csv')
+    df = pd.read_csv('heart_failure_clinical_records_dataset.csv')
     
     print(df.head())
 
@@ -41,30 +41,55 @@ def main():
     plt.title('Mortalidade por Insuficiência Cardíaca — Com ou Sem Diabetes', fontsize=13, pad=15)
     plt.ylabel('Taxa de Mortalidade (%)')
 
+    plt.show()
+    
+# Pergunta 3 -  A hipertensão influencia na chance de óbito por insuficiência cardíaca? Comparar taxa de mortalidade entre hipertensos e não hipertensos.
 
+    hipertensao_mortalidade = df.groupby('high_blood_pressure')['DEATH_EVENT'].mean().sort_index() * 100 # aqui ele pega a média da coluna DEATH_EVENT agrupando por high_blood_pressure
+    valores = hipertensao_mortalidade.values # pega os valores da série resultante
+    labels = [f'Sem Hipertensão {valores[0]:.2f}%', f'Com Hipertensão {valores[1]:.2f}%'] # cria os rótulos com as taxas formatadas
+    plt.bar(labels, valores, color=["#a23d0a", "#0e91ef"], alpha=0.8,width=0.5)
+    plt.title('Mortalidade por Insuficiência Cardíaca — Com ou Sem Hipertensão', fontsize=13, pad=15)
+    plt.ylabel('Taxa de Mortalidade (%)')   
     plt.show()
 
+# Pergunta 4 - O nível de creatinina sérica (indicador da função renal) tem relação com o risco de morte? 
+# Médicos usam creatinina como preditor de prognóstico; ótimo insight biomédico.
 
+    morreram = df[df['DEATH_EVENT'] == 1]['serum_creatinine'] # filtra os pacientes que morreram e pega os níveis de creatinina
+    sobreviveram = df[df['DEATH_EVENT'] == 0]['serum_creatinine'] # filtra os pacientes que sobreviveram e pega os níveis de creatinina
+    media_sobreviveu = sobreviveram.mean()
+    media_morreu = morreram.mean()
+    labels = [f'Sobreviveu\n({media_sobreviveu:.2f} mg/dL)',
+              f'Morreu\n({media_morreu:.2f} mg/dL)']
+    plt.figure(figsize=(6, 6))
+    plt.bar(labels, [media_sobreviveu, media_morreu],
+            color=['#38761d', '#cc0000'],width=0.5)
+    plt.title('Nível Médio de Creatinina Sérica por Desfecho', fontsize=14)
+    plt.ylabel('Creatinina Sérica Média (mg/dL)')
+    plt.ylim(0, 5)
+    plt.grid(axis='y', linestyle='--', alpha=0.6)
+    plt.show()
 
-#Conclusão pergunta 1
-#A idade apresenta uma relação clara com a mortalidade por insuficiência cardíaca.
-#Pacientes que morreram durante o acompanhamento têm, em média,
-#uma idade cerca de 7 anos superior aos sobreviventes.
-#Isso sugere que o envelhecimento é um fator importante de risco,
-#possivelmente devido à menor capacidade de regeneração cardíaca
-#e maior presença de comorbidades em idosos
-#Portanto, é fundamental prestar atenção especial a pacientes idosos,
-#priorizando o monitoramento constante,
-#prevenção e acompanhamento médico mais rigoroso para reduzir o risco de mortalidade nessa faixa etária
-
-#Conclusao pergunta 2
-#A presença de diabetes não apresentou diferença significativa na mortalidade
-#por insuficiência cardíaca neste conjunto de dados.
-#As taxas de óbito foram praticamente iguais entre pacientes com e sem diabetes,
-#o que sugere que, isoladamente, o diabetes pode não ser um fator determinante
-#para a mortalidade neste contexto.
-#Contudo, é importante destacar que o diabetes continua sendo uma condição de risco
-#cardiovascular relevante, podendo atuar em conjunto com outros fatores (como idade, hipertensão e função cardíaca reduzida).
+ # Pergunta 5 - Pacientes com níveis baixos de sódio no sangue apresentam maior mortalidade?
+ # Hiponatremia (baixo sódio)
+ 
+ 
+    morreram = df[df['DEATH_EVENT'] == 1]['serum_sodium'] # filtra os pacientes que morreram e pega os níveis de sódio
+    sobreviveram = df[df['DEATH_EVENT'] == 0]['serum_sodium'] # filtra os pacientes que sobreviveram e pega os níveis de sódio
+    media_sobreviveu = sobreviveram.mean()
+    media_morreu = morreram.mean()
+    labels = [f'Sobreviveu\n({media_sobreviveu:.2f} mEq/L)',
+              f'Morreu\n({media_morreu:.2f} mEq/L)']
+    plt.figure(figsize=(6, 6))
+    plt.bar(labels, [media_sobreviveu, media_morreu],
+            color=['#1155cc', '#ff0000'],width=0.5)
+    plt.title('Nível Médio de Sódio Sérico por Desfecho', fontsize=14)
+    plt.ylabel('Sódio Sérico Médio (mEq/L)')
+    plt.ylim(120, 150)
+    plt.grid(axis='y', linestyle='--', alpha=0.6)
+    plt.show()
+    
 
 if __name__ == "__main__":
     main()
