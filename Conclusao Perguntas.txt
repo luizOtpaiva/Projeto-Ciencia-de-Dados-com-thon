@@ -1,0 +1,37 @@
+Abaixo estão nossas conclusoes acerca de cada pergunta: 
+
+Pergunta 1: 
+    A idade apresenta uma relação clara com a mortalidade por insuficiência cardíaca.
+    Pacientes que morreram durante o acompanhamento têm, em média, uma idade cerca de 7 anos superior aos sobreviventes.
+    Isso sugere que o envelhecimento é um fator importante de risco, possivelmente devido à menor capacidade de regeneração cardíaca e maior presença de comorbidades em idosos
+    - Portanto, é fundamental prestar atenção especial a pacientes idosos,
+    - priorizando o monitoramento constante,
+    - prevenção e acompanhamento médico mais rigoroso para reduzir o risco de mortalidade nessa faixa etária
+
+Pergunta 2 : 
+    - A presença de diabetes não apresentou diferença significativa na mortalidade por insuficiência cardíaca neste conjunto de dados.
+    - As taxas de óbito foram praticamente iguais entre pacientes com e sem diabetes, o que sugere que, isoladamente, o diabetes pode não ser um fator determinante
+      para a mortalidade neste contexto.
+    - Contudo, é importante destacar que o diabetes continua sendo uma condição de risco, cardiovascular relevante, 
+      podendo atuar em conjunto com outros fatores (como idade, hipertensão e função cardíaca reduzida).
+
+Pergunta 3 : 
+    - A hipertensão arterial está associada a uma taxa de mortalidade significativamente maior em pacientes com insuficiência cardíaca.
+    - Pacientes hipertensos apresentam uma taxa de mortalidade de aproximadamente 40%, enquanto aqueles sem hipertensão têm uma taxa em torno de 20%.
+    - Isso sugere que a hipertensão é um fator de risco importante que pode agravar o prognóstico desses pacientes.
+
+Pergunta 4 : 
+
+    - Pacientes que morreram apresentaram níveis médios de creatinina sérica significativamente mais altos do que aqueles que sobreviveram.
+    - Isso sugere que a disfunção renal, refletida por níveis elevados de creatinina, está associada a um pior prognóstico em pacientes com insuficiência cardíaca.
+    - Portanto, o monitoramento dos níveis de creatinina sérica pode ser crucial para a avaliação do risco e manejo clínico desses pacientes.
+
+Pergunta 5 : 
+    - Pacientes que morreram apresentaram níveis médios de sódio sérico mais baixos do que os sobreviventes, sugerindo que a hiponatremia pode estar associada 
+      a um pior prognóstico em pacientes com insuficiência cardíaca.
+    - Portanto, monitorar e corrigir os níveis de sódio pode ser crucial no manejo clínico desses pacientes.
+    - Isso reforça a importância do equilíbrio eletrolítico na saúde cardiovascular e pode orientar intervenções terapêuticas.
+    - A hiponatremia pode refletir uma disfunção cardíaca mais grave e contribuir para complicações adicionais.
+    - Assim, a avaliação regular dos níveis de sódio sérico deve ser parte integrante do cuidado de pacientes com insuficiência cardíaca.
+
+
