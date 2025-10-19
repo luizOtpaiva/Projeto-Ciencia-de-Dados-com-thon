@@ -1,0 +1,42 @@
+Perguntas usadas no Trabalho :
+
+1. A idade é um fator determinante na mortalidade de pacientes com insuficiência cardíaca?
+
+→ Avaliar se pacientes mais velhos têm maior probabilidade de óbito.
+Gráfico: boxplot ou barplot da idade × mortalidade.
+
+2. Pacientes com diabetes têm maior taxa de mortalidade cardíaca?
+
+→ Insight social e clínico importante — pode orientar políticas de prevenção.
+
+3. A hipertensão influencia na chance de óbito por insuficiência cardíaca?
+
+→ Comparar taxa de mortalidade entre hipertensos e não hipertensos.
+
+4. O nível de creatinina sérica (indicador da função renal) tem relação com o risco de morte?
+
+→ Médicos usam creatinina como preditor de prognóstico; ótimo insight biomédico.
+
+5. Pacientes com níveis baixos de sódio no sangue apresentam maior mortalidade?
+
+→ Hiponatremia (baixo sódio) é associada a desfechos ruins em pacientes cardíacos.
+
+6. Há diferença de mortalidade entre homens e mulheres?
+
+→ Insight social relevante (padrões biológicos e desigualdade de diagnóstico).
+
+7. O tabagismo (fumar) aumenta o risco de mortalidade cardíaca nesse grupo?
+
+→ Comparar fumantes vs. não fumantes em termos de sobrevida.
+
+8. Os níveis da enzima CPK (indicador de dano muscular) estão associados à morte cardíaca?
+
+→ Testar correlação entre CPK level e óbito; pode haver limiar de risco.
+
+9. O percentual de ejeção do coração (Ejection Fraction) é o melhor indicador de sobrevida?
+
+→ Variável essencial — medir se pacientes com fração de ejeção baixa morrem mais.
+
+10. Quais fatores (entre idade, hipertensão, creatinina, sódio, etc.) mais influenciam a mortalidade?
+
+→ Fazer uma análise de correlação ou gráfico de importância de variáveis (pode até usar regressão logística pra prever risco de morte).
