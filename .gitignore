@@ -1,0 +1,27 @@
+# Ambientes virtuais
+.venv/
+venv/
+env/
+
+# Arquivos de IDEs
+.idea/
+.vscode/
+*.iml
+
+# Arquivos de cache do Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Arquivos temporários e logs
+*.log
+.DS_Store
+
+# Arquivos de sistema
+Thumbs.db
+
+# Arquivos gerados automaticamente
+*.csv
+*.xlsx
+*.ipynb_checkpoints
