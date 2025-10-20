@@ -22,6 +22,5 @@ __pycache__/
 Thumbs.db
 
 # Arquivos gerados automaticamente
-*.csv
 *.xlsx
 *.ipynb_checkpoints
