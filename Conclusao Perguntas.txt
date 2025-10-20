@@ -20,8 +20,7 @@ Pergunta 3 :
     - Pacientes hipertensos apresentam uma taxa de mortalidade de aproximadamente 40%, enquanto aqueles sem hipertensão têm uma taxa em torno de 20%.
     - Isso sugere que a hipertensão é um fator de risco importante que pode agravar o prognóstico desses pacientes.
 
-Pergunta 4 : 
-
+Pergunta 4 :
     - Pacientes que morreram apresentaram níveis médios de creatinina sérica significativamente mais altos do que aqueles que sobreviveram.
     - Isso sugere que a disfunção renal, refletida por níveis elevados de creatinina, está associada a um pior prognóstico em pacientes com insuficiência cardíaca.
     - Portanto, o monitoramento dos níveis de creatinina sérica pode ser crucial para a avaliação do risco e manejo clínico desses pacientes.
@@ -34,4 +33,21 @@ Pergunta 5 :
     - A hiponatremia pode refletir uma disfunção cardíaca mais grave e contribuir para complicações adicionais.
     - Assim, a avaliação regular dos níveis de sódio sérico deve ser parte integrante do cuidado de pacientes com insuficiência cardíaca.
 
+Pergunta 6 :
+    - A análise mostra que a taxa de mortalidade por insuficiência cardíaca foi de 32,38% entre mulheres e 31,96% entre homens.
+    - Essa diferença é mínima, indicando que o sexo não apresenta influência significativa na mortalidade dentro deste conjunto de dados.
+    - Embora alguns estudos clínicos apontem diferenças hormonais e fisiológicas entre homens e mulheres,
+      neste caso específico, os resultados sugerem que outros fatores, como idade, comorbidades e função cardíaca, têm papel mais determinante no desfecho dos pacientes.
 
+Pergunta 7 :
+    - A análise mostra que a taxa de mortalidade entre fumantes e não fumantes é semelhante, com leve diferença a favor dos não fumantes.
+    - No entanto, o número de fumantes no conjunto de dados é significativamente menor, o que pode distorcer a comparação direta.
+    - Se a amostra fosse equilibrada (com proporções iguais entre fumantes e não fumantes), o resultado poderia mudar.
+    - Assim, não é possível afirmar com segurança que o tabagismo aumenta o risco de mortalidade cardíaca neste grupo,
+      embora, do ponto de vista clínico, o fumo continue sendo um fator de risco reconhecido para doenças cardiovasculares.
+
+Pergunta 8 :
+    - A análise mostra que pacientes que morreram apresentaram níveis médios de CPK um pouco mais altos (≈670 U/L) em comparação aos que sobreviveram (≈540 U/L).
+    - Isso indica uma possível associação entre níveis elevados de CPK — que refletem maior dano muscular e cardíaco — e o risco de morte cardíaca.
+    - Entretanto, a diferença não é muito expressiva, sugerindo que o CPK isoladamente não é um forte indicador de mortalidade,
+      mas pode contribuir para a avaliação de risco quando considerado junto a outros fatores clínicos.

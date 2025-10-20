@@ -89,7 +89,65 @@ def main():
     plt.ylim(120, 150)
     plt.grid(axis='y', linestyle='--', alpha=0.6)
     plt.show()
-    
+
+
+    # Pergunta 6 - Há diferença de mortalidade entre homens e mulheres?
+
+    # Calcula a taxa de mortalidade (%) por sexo
+    mortalidade_sexo = df.groupby('sex')['DEATH_EVENT'].mean().sort_index() * 100
+    valores = mortalidade_sexo.values
+    labels = [f'Mulheres {valores[0]:.2f}%', f'Homens {valores[1]:.2f}%']
+
+    plt.figure(figsize=(6, 6))
+    plt.bar(labels, valores, color=['#9370DB', '#6495ED'], alpha=0.8, width=0.4, edgecolor='black')
+
+    plt.title('Taxa de Mortalidade por Sexo', fontsize=14, pad=15)
+    plt.ylabel('Taxa de Mortalidade (%)')
+    plt.ylim(0, max(valores) + 10)
+    plt.grid(axis='y', linestyle='--', alpha=0.6)
+
+    plt.show()
+
+    #Pergunta 7 - O tabagismo (fumar) aumenta o risco de mortalidade cardíaca nesse grupo?
+
+    # Calcula a taxa de mortalidade (%) por tabagismo
+    mortalidade_fumo = df.groupby('smoking')['DEATH_EVENT'].mean().sort_index() * 100
+    valores = mortalidade_fumo.values
+
+    contagem = df['smoking'].value_counts().sort_index()
+
+    labels = [
+        f'Não fumantes\n({contagem[0]} pessoas)',
+        f'Fumantes\n({contagem[1]} pessoas)'
+    ]
+
+    plt.figure(figsize=(6, 6))
+    plt.bar(labels, valores, color=['#8FD19E', '#E07B91'], alpha=0.8, width=0.4, edgecolor='black')
+
+    plt.title('Taxa de Mortalidade por Tabagismo', fontsize=14, pad=15)
+    plt.ylabel('Taxa de Mortalidade (%)')
+    plt.ylim(0, max(valores) + 10)
+    plt.grid(axis='y', linestyle='--', alpha=0.6)
+
+    plt.show()
+
+    #Pergunta 8 - 8. Os níveis da enzima CPK (indicador de dano muscular) estão associados à morte cardíaca?
+
+    # Calcula as médias de CPK para cada grupo
+    media_cpk = df.groupby('DEATH_EVENT')['creatinine_phosphokinase'].mean()
+
+    valores = media_cpk.values
+    labels = [f'Sobreviveram \n {valores[0]:.2f} (U/L)', f'Morreram \n {valores[1]:.2f} (U/L)']
+
+    plt.figure(figsize=(6, 6))
+    plt.bar(labels, valores, color=['#8FD19E', '#E07B91'], alpha=0.8, edgecolor='black', width=0.5)
+
+    plt.title('Nível Médio da Enzima CPK por Ocorrência de Morte Cardíaca', fontsize=14, pad=15)
+    plt.ylabel('Nível médio de CPK (U/L)')
+    plt.grid(axis='y', linestyle='--', alpha=0.6)
+
+    plt.show()
+
 
 if __name__ == "__main__":
     main()
