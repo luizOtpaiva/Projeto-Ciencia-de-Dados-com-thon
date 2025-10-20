@@ -148,6 +148,95 @@ def main():
 
     plt.show()
 
+    # Pergunta 9 - O percentual de ejeção do coração (Ejection Fraction) é o melhor indicador de sobrevida?
+
+    # 9.1 Comparação da Média de Fração de Ejeção por Desfecho
+    morreram = df[df['DEATH_EVENT'] == 1]['ejection_fraction']
+    sobreviveram = df[df['DEATH_EVENT'] == 0]['ejection_fraction']
+    media_sobreviveu = sobreviveram.mean()
+    media_morreu = morreram.mean()
+
+    labels = [f'Sobreviveu\n({media_sobreviveu:.1f}%)',
+              f'Morreu\n({media_morreu:.1f}%)']
+
+    plt.figure(figsize=(6, 6))
+    plt.bar(labels, [media_sobreviveu, media_morreu],
+            color=['#4CAF50', '#FF5733'], width=0.5)
+    plt.title('Fração de Ejeção Média por Desfecho', fontsize=14)
+    plt.ylabel('Fração de Ejeção Média (%)')
+    plt.ylim(0, 50)
+    plt.grid(axis='y', linestyle='--', alpha=0.6)
+    plt.show()  # Usado show() para o código que será apresentado ao usuário
+
+    # 9.2 Comparação da Taxa de Mortalidade por Grupo de Risco (FE <= 40% vs. FE > 40%)
+    df['EF_Group'] = np.where(df['ejection_fraction'] <= 40, 'Baixa (<= 40%)', 'Normal (> 40%)')
+    mortalidade_ef = df.groupby('EF_Group')['DEATH_EVENT'].mean() * 100
+
+    # Garantir que a ordem dos grupos no gráfico é a mesma para as labels e valores
+    mortalidade_ef = mortalidade_ef.sort_index(ascending=False)  # Ordem: Normal primeiro, Baixa depois
+
+    valores_ef = mortalidade_ef.values
+    labels_ef = [f'Baixa ({mortalidade_ef.loc["Baixa (<= 40%)"]:.2f}%)',
+                 f'Normal ({mortalidade_ef.loc["Normal (> 40%)"]:.2f}%)']
+
+    plt.figure(figsize=(6, 6))
+    # Ordem das barras ajustada: Baixa primeiro (índice 0), Normal segundo (índice 1)
+    plt.bar([labels_ef[0], labels_ef[1]], [valores_ef[0], valores_ef[1]],
+            color=['#FFC300', '#33AFFF'], alpha=0.8, width=0.5)
+
+    plt.title('Taxa de Mortalidade por Grupo de Fração de Ejeção', fontsize=14, pad=15)
+    plt.ylabel('Taxa de Mortalidade (%)')
+    plt.ylim(0, max(valores_ef) + 10)
+    plt.grid(axis='y', linestyle='--', alpha=0.6)
+    plt.show()
+
+    # Pergunta 10 - Quais fatores (entre idade, hipertensão, creatinina, sódio, etc.) mais influenciam a mortalidade?
+
+    # Selecionar colunas de interesse
+    colunas_correlacao = ['age', 'anaemia', 'creatinine_phosphokinase', 'diabetes',
+                          'ejection_fraction', 'high_blood_pressure', 'platelets',
+                          'serum_creatinine', 'serum_sodium', 'sex', 'smoking', 'time']
+
+    # Calcular a correlação com a variável alvo (DEATH_EVENT)
+    correlacoes = df[colunas_correlacao + ['DEATH_EVENT']].corr()['DEATH_EVENT'].drop('DEATH_EVENT')
+
+    # Ordenar as correlações pelo valor absoluto (importância)
+    correlacoes_abs_ordenadas = correlacoes.abs().sort_values(ascending=False)
+
+    # Reordenar os valores de correlação originais com base na ordem absoluta
+    correlacoes_ordenadas = correlacoes.loc[correlacoes_abs_ordenadas.index]
+
+    # Mapear nomes das colunas para nomes mais legíveis em Português
+    nomes_portugues = {
+        'time': 'Tempo de Acompanhamento (dias)',
+        'serum_creatinine': 'Creatinina Sérica',
+        'ejection_fraction': 'Fração de Ejeção',
+        'age': 'Idade',
+        'serum_sodium': 'Sódio Sérico',
+        'high_blood_pressure': 'Hipertensão',
+        'anaemia': 'Anemia',
+        'creatinine_phosphokinase': 'CPK',
+        'sex': 'Sexo (Homem)',
+        'smoking': 'Tabagismo',
+        'diabetes': 'Diabetes',
+        'platelets': 'Plaquetas'
+    }
+
+    rotulos_ordenados = [nomes_portugues.get(col, col) for col in correlacoes_ordenadas.index]
+    valores_ordenados = correlacoes_ordenadas.values
+
+    # Cores: Positivo (Risco Maior) em Vermelho, Negativo (Risco Menor) em Verde
+    cores = ['#cc0000' if c > 0 else '#38761d' for c in valores_ordenados]
+
+    plt.figure(figsize=(10, 8))
+    plt.barh(rotulos_ordenados, valores_ordenados, color=cores)
+    plt.axvline(0, color='grey', linestyle='--', alpha=0.7)  # Linha de referência no zero
+    plt.title('Correlação dos Fatores com a Mortalidade (DEATH_EVENT)', fontsize=16, pad=15)
+    plt.xlabel('Coeficiente de Correlação (R)', fontsize=12)
+    plt.gca().invert_yaxis()  # Colocar o fator mais influente no topo
+    plt.xlim(-0.5, 0.5)  # Limitar o eixo x para melhor visualização
+    plt.grid(axis='x', linestyle='--', alpha=0.6)
+    plt.show()
 
 if __name__ == "__main__":
     main()
