@@ -51,3 +51,13 @@ Pergunta 8 :
     - Isso indica uma possível associação entre níveis elevados de CPK — que refletem maior dano muscular e cardíaco — e o risco de morte cardíaca.
     - Entretanto, a diferença não é muito expressiva, sugerindo que o CPK isoladamente não é um forte indicador de mortalidade,
       mas pode contribuir para a avaliação de risco quando considerado junto a outros fatores clínicos.
+
+Pergunta 9 :
+    - A fração de ejeção média dos pacientes que sobreviveram foi de aproximadamente 40,26%, enquanto a dos que morreram foi de cerca de 33,47%.
+    - Isso indica que pacientes com fração de ejeção menor têm maior probabilidade de óbito, já que o coração bombeia menos sangue a cada batimento.
+    - Portanto, a fração de ejeção se mostra um forte indicador de sobrevida em casos de insuficiência cardíaca.
+
+Pergunta 10 :
+    - A análise mostrou que os fatores mais relacionados à mortalidade foram o tempo de acompanhamento, a fração de ejeção, a creatinina sérica e a idade.
+    - Pacientes com menor tempo de acompanhamento, menor fração de ejeção, níveis elevados de creatinina e maior idade apresentaram maior risco de morte,
+      enquanto fatores como diabetes, hipertensão e tabagismo tiveram pouca influência isolada.
