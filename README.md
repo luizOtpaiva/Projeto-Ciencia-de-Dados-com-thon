@@ -1,6 +1,6 @@
-Projeto Ciência de Dados com Python
+### Projeto Ciência de Dados com Python
 
-📋Visão Geral
+### 📋Visão Geral
 
 Este repositório reúne um projeto de Ciência de Dados realizado em Python, com foco em modelagem de dados, análise exploratória e predição — especificamente voltado para o caso de estudo “Heart Failure Prediction”.
 Ele inclui:
@@ -13,7 +13,7 @@ Perguntas usadas no Trabalho.txt — lista de perguntas orientadoras do projeto.
 
 Conclusao Perguntas.txt — conclusões/respostas às perguntas.
 
-🎯 Objetivos do Projeto
+### 🎯 Objetivos do Projeto
 
 Explorar e preparar dados para entender fatores associados à falha cardíaca.
 
@@ -21,7 +21,7 @@ Responder a hipóteses/perguntas previamente definidas (ver Perguntas usadas no 
 
 Documentar conclusões e insights obtidos (ver Conclusao Perguntas.txt).
 
-✅ Funcionalidades / O que está incluso
+### ✅ Funcionalidades / O que está incluso
 
 Código Python para: limpeza de dados, pré-processamento, análise exploratória, visualizações, treinamento de modelos e avaliação.
 
@@ -49,7 +49,7 @@ git clone https://github.com/luizOtpaiva/Projeto-Ciencia-de-Dados-com-thon.git
 
 Navegar até o diretório Heart Failure Prediction e executar o(s) notebook(s) ou script(s) conforme o código disponível.
 
-🤝 Contribuições
+### 🤝 Contribuições
 
 Contribuições são bem-vindas! Se desejar melhorar o projeto, por favor:
 
