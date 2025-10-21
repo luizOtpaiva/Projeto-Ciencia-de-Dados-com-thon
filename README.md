@@ -3,7 +3,7 @@
 # Alunos
 | Participante  | Matrícula | Curso |
 | ------------- | -----------------| ------- |
-| Antonio Borges Oliveira | 1998 | GEP |
+| Antonio Borges Oliveira | 147 | GEP |
 | Luiz Otavio Ribeiro de Paiva| 613 | GES 
 | Pedro Henrique Fernandes Pereira| 457 | GES |
 
