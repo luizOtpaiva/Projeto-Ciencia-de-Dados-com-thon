@@ -1,5 +1,12 @@
 ### Projeto Ciência de Dados com Python
 
+# Alunos
+| Participante  | Matrícula | Curso |
+| ------------- | -----------------| ------- |
+| Antonio Borges Oliveira | 1998 | GEP |
+| Luiz Otavio Ribeiro de Paiva| 613 | GES 
+| Pedro Henrique Fernandes Pereira| 457 | GES |
+
 ### 📋Visão Geral
 
 Este repositório reúne um projeto de Ciência de Dados realizado em Python, com foco em modelagem de dados, análise exploratória e predição — especificamente voltado para o caso de estudo “Heart Failure Prediction”.
